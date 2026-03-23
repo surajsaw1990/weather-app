@@ -78,7 +78,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
 
     initializeWeather();
     // We only need this on first render.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   const handleSearch = async (cityName) => {
