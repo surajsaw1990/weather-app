@@ -101,7 +101,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
             WeatherSphere
           </p>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-            Smart weather insights for your day, wherever you are.
+            SkyCastDaily - Smart weather insights & real-time forecast
           </h1>
           <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 sm:text-base">
             Track current conditions, upcoming forecasts, air quality, and
