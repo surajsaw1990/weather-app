@@ -11,7 +11,7 @@ function SearchBar({ query, onQueryChange, onSearch }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`glass-panel mb-5 flex flex-col gap-3 rounded-3xl p-4 shadow-soft transition-all duration-300 sm:flex-row sm:items-center ${
+      className={`glass-panel mb-5 flex flex-col gap-3 rounded-3xl p-4 shadow-soft transition-all duration-300 sm:flex-row sm:items-center w-full overflow-hidden ${
         isFocused ? 'ring-2 ring-sky-400/60' : ''
       }`}
     >

@@ -94,13 +94,13 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
   };
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
+    <main className="w-full overflow-x-hidden flex min-h-screen flex-col px-4 py-4 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto">
       <header className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl animate-floatIn">
           <p className="mb-2 text-sm font-medium uppercase tracking-[0.35em] text-sky-700 dark:text-sky-300">
             WeatherSphere
           </p>
-          <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
+          <h1 className="text-2xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             SkyCastDaily - Smart weather insights & real-time forecast
           </h1>
           <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 sm:text-base">
