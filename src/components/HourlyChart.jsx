@@ -51,6 +51,7 @@ function HourlyChart({ hourlyData, isDarkMode }) {
         ]
       },
       options: {
+        responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
@@ -95,8 +96,8 @@ function HourlyChart({ hourlyData, isDarkMode }) {
       <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
         Forecast is displayed in 3-hour intervals from OpenWeatherMap data.
       </p>
-      <div className="mt-6 h-72">
-        <canvas ref={canvasRef} />
+      <div className="mt-6 w-full h-[250px] sm:h-[300px]">
+        <canvas ref={canvasRef} className="w-full h-full" />
       </div>
     </section>
   );
