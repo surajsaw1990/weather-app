@@ -94,7 +94,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
   };
 
   return (
-    <main className="w-full overflow-x-hidden flex min-h-screen flex-col px-4 py-4 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto">
+    <main className="w-full flex min-h-screen flex-col px-4 py-4 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto">
       <header className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl animate-floatIn">
           <p className="mb-2 text-sm font-medium uppercase tracking-[0.35em] text-sky-700 dark:text-sky-300">
@@ -127,8 +127,8 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
       {isLoading ? (
         <LoadingSpinner />
       ) : weatherData ? (
-        <div className="grid gap-6 pb-6 xl:grid-cols-[1.2fr_0.8fr]">
-          <section className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6 w-full">
+          <section className="space-y-6 lg:col-span-2 w-full">
             <WeatherCard data={weatherData.current} />
             <HourlyChart
               hourlyData={weatherData.hourly}
@@ -137,7 +137,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
             <ForecastSection forecast={weatherData.daily} />
           </section>
 
-          <aside className="space-y-6">
+          <aside className="space-y-6 w-full">
             <WearSuggestion temperature={weatherData.current.temperature} />
             <AirQualityCard aqi={weatherData.aqi} />
             <WeatherHighlights data={weatherData.current} />
