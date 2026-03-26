@@ -33,7 +33,7 @@ function SearchBar({ query, onQueryChange, onSearch }) {
 
       <button
         type="submit"
-        className="rounded-2xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-400"
+        className="w-full sm:w-auto rounded-2xl bg-sky-600 px-5 py-3 text-sm"
       >
         Search Weather
       </button>
