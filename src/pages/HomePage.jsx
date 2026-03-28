@@ -94,7 +94,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
   };
 
   return (
-    <main className="w-full flex min-h-screen flex-col px-4 py-4 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto">
+    <main className="w-full min-h-screen px-4 py-4 max-w-5xl mx-auto space-y-6">
       <header className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl animate-floatIn">
           <p className="mb-2 text-sm font-medium uppercase tracking-[0.35em] text-sky-700 dark:text-sky-300">
