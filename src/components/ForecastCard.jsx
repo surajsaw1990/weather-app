@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Card from "../ui/Card";
+import Card from "./ui/Card";
 import { getWeatherIconUrl } from '../utils/formatters';
 
 function ForecastCard({ item }) {
