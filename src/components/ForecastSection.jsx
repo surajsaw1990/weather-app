@@ -12,7 +12,7 @@ function ForecastSection({ forecast }) {
         </div>
       </div>
 
-      <div className="weather-scrollbar flex gap-4 overflow-x-auto pb-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 pb-2">
         {forecast.map((item) => (
           <ForecastCard key={item.timestamp} item={item} />
         ))}
