@@ -103,7 +103,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
           <h1 className="text-2xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
             SkyCastDaily - Smart weather insights & real-time forecast
           </h1>
-          <p className="mt-3 text-sm text-white/80 sm:text-base">
+          <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 sm:text-base">
             Track current conditions, upcoming forecasts, air quality, and
             wardrobe suggestions in one clean dashboard.
           </p>
