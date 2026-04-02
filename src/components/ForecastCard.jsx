@@ -5,9 +5,10 @@ import { getWeatherIconUrl } from '../utils/formatters';
 function ForecastCard({ item }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      whileHover={{ scale: 1.05 }}
     >
       <Card className="text-center space-y-3 transition-all duration-300 hover:-translate-y-2 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-2xl rounded-2xl p-4">
         <p className="text-sm font-medium tracking-tightest">
