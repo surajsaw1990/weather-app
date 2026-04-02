@@ -9,7 +9,7 @@ function ForecastCard({ item }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <Card className="text-center space-y-3 transition hover:-translate-y-1">
+      <Card className="text-center space-y-3 transition-all duration-300 hover:-translate-y-2 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg hover:shadow-2xl rounded-2xl p-4">
         <p className="text-sm font-medium tracking-tightest">
           {item.dayLabel}
         </p>
