@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div
-      className={`min-h-screen bg-gradient-to-br text-slate-900 transition-all duration-700 dark:text-slate-50 ${backgroundTheme.wrapper}`}
+      className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white transition-all duration-700"
     >
       <div className={`min-h-screen ${backgroundTheme.overlay}`}>
         <HomePage
