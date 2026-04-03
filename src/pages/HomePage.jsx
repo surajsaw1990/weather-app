@@ -10,7 +10,6 @@ import ThemeToggle from '../components/ThemeToggle';
 import WearSuggestion from '../components/WearSuggestion';
 import WeatherCard from '../components/WeatherCard';
 import WeatherHighlights from '../components/WeatherHighlights';
-import DailyBrief from "../components/DailyBrief";
 import {
   fetchWeatherByCity,
   fetchWeatherByCoordinates
@@ -129,15 +128,6 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
         <LoadingSpinner />
       ) : weatherData ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6 w-full">
-          
-          <DailyBrief 
-            weather={{ 
-              main: { temp: weatherData.current.temperature },
-              name: weatherData.current.searchLabel || query 
-            }}
-            aqi={weatherData.aqi}
-          />
-
           
           <section className="space-y-6 lg:col-span-2 w-full">
    
