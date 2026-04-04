@@ -28,11 +28,11 @@ adviceList.push("🔥 Wear warm clothes");
 
 // Time based
 if (hour < 12) {
-adviceList.push("🌤️ Good morning for productivity");
+adviceList.push("🌤️ Fresh morning, great start to the day");
 } else if (hour < 18) {
-adviceList.push("🚶 Good time to go outside");
+adviceList.push("🌤️ Comfortable time for outdoor activities");
 } else {
-adviceList.push("🌙 Relax, it's evening time");
+adviceList.push("🌙 Calm night, best time to relax");
 }
 
 // Fallback
@@ -43,7 +43,6 @@ adviceList.push("🙂 Weather looks fine, enjoy!");
 return ( <div className="glass-panel rounded-[2rem] p-6 shadow-soft"> <p className="text-xs uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
 Smart Advice </p>
 
-```
   <div className="mt-2 space-y-1">
     {adviceList.map((item, index) => (
       <p key={index} className="text-sm font-medium">
