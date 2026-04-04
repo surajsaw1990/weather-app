@@ -4,6 +4,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import ForecastSection from '../components/ForecastSection';
 import HourlyChart from '../components/HourlyChart';
 import LoadingSpinner from '../components/LoadingSpinner';
+import WeatherSkeleton from "../components/WeatherSkeleton";
 import SearchBar from '../components/SearchBar';
 import SearchHistory from '../components/SearchHistory';
 import ThemeToggle from '../components/ThemeToggle';
@@ -126,7 +127,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
       {error && <ErrorMessage message={error} />}
 
       {isLoading ? (
-        <LoadingSpinner />
+        <WeatherSkeleton />
       ) : weatherData ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6 w-full">
           
