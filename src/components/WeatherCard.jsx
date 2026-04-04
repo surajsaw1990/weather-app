@@ -1,6 +1,37 @@
 import { getWeatherIconUrl } from '../utils/formatters';
+import { useEffect, useState } from "react";
 
 function WeatherCard({ data }) {
+  const [animatedTemp, setAnimatedTemp] = useState(0);
+
+  useEffect(() => {
+  if (data?.temperature === undefined) return;
+
+  let start = animatedTemp;
+  const end = Math.round(data.temperature);
+
+  const duration = 700;
+  const stepTime = 20;
+  const steps = duration / stepTime;
+  const increment = (end - start) / steps;
+
+  const timer = setInterval(() => {
+    start += increment;
+
+    if (
+      (increment > 0 && start >= end) ||
+      (increment < 0 && start <= end)
+    ) {
+
+      setAnimatedTemp(end);
+      clearInterval(timer);
+    } else {
+      setAnimatedTemp(Math.floor(start));
+    }
+  }, stepTime);
+
+  return () => clearInterval(timer);
+}, [data?.temperature]);
   return (
     <section className="glass-panel rounded-[2rem] p-6 shadow-soft animate-floatIn">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -10,7 +41,7 @@ function WeatherCard({ data }) {
           </p>
           <div className="mt-4 flex items-end gap-3">
             <h2 className="text-5xl font-semibold sm:text-6xl">
-              {Math.round(data.temperature)}{'\u00B0C'}
+              {animatedTemp}{'\u00B0C'}
             </h2>
             <span className="mb-2 text-lg text-slate-600 dark:text-slate-300">
               Feels like {Math.round(data.feelsLike)}{'\u00B0C'}
