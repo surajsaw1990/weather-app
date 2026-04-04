@@ -7,38 +7,36 @@ const hour = new Date().getHours();
 
 let adviceList = [];
 
-// AQI priority
-if (aqi > 120) {
-adviceList.push("😷 Air quality is poor");
-adviceList.push("🚫 Avoid long outdoor exposure");
-}
-
-// Hot weather
-if (temp > 30) {
-adviceList.push("🥵 It's hot outside");
+// 🌡️ Temperature logic
+if (temp >= 30) {
+adviceList.push("🥵 Hot weather outside");
 adviceList.push("💧 Stay hydrated");
 adviceList.push("😎 Use sunscreen");
-}
-
-// Cold weather
-if (temp < 15) {
-adviceList.push("🧥 It's cold");
+} else if (temp >= 24) {
+adviceList.push("🌤️ Pleasant weather");
+} else if (temp < 15) {
+adviceList.push("🧥 Cold weather");
 adviceList.push("🔥 Wear warm clothes");
 }
 
-// Time based
+// 🌫️ AQI logic
+if (aqi > 120) {
+adviceList.push("😷 Poor air quality");
+} else if (aqi > 80) {
+adviceList.push("🌫️ Slight pollution, be cautious");
+}
+
+// 🕒 Time logic
 if (hour < 12) {
-adviceList.push("🌤️ Fresh morning, great start to the day");
+adviceList.push("🌤️ Fresh morning, great start");
 } else if (hour < 18) {
-adviceList.push("🌤️ Comfortable time for outdoor activities");
+adviceList.push("🚶 Comfortable time for outdoors");
 } else {
 adviceList.push("🌙 Calm night, best time to relax");
 }
 
-// Fallback
-if (adviceList.length === 0) {
-adviceList.push("🙂 Weather looks fine, enjoy!");
-}
+// 🎯 Limit max 4 lines (premium feel)
+adviceList = adviceList.slice(0, 4);
 
 return ( <div className="glass-panel rounded-[2rem] p-6 shadow-soft"> <p className="text-xs uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
 Smart Advice </p>
@@ -51,7 +49,6 @@ Smart Advice </p>
     ))}
   </div>
 </div>
-
 
 );
 };
