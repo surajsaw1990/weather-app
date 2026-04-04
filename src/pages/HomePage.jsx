@@ -130,7 +130,7 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
 
   {/* Skeleton */}
   <div
-    className={`transition-opacity duration-500 ${
+    className={`absolute inset-0 transition-opacity duration-500 ${
       isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
     }`}
   >
