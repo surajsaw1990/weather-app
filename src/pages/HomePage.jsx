@@ -126,35 +126,56 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
 
       {error && <ErrorMessage message={error} />}
 
-      {isLoading ? (
-        <WeatherSkeleton />
-      ) : weatherData ? (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6 w-full">
+    <div className="relative">
+
+  {/* Skeleton */}
+  <div
+    className={`transition-opacity duration-500 ${
+      isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
+    }`}
+  >
+    <WeatherSkeleton />
+  </div>
+
+  {/* Content */}
+  <div
+    className={`transition-all duration-500 ${
+      isLoading
+        ? "opacity-0 translate-y-4"
+        : "opacity-100 translate-y-0"
+    }`}
+  >
+    {!isLoading && weatherData && (
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6 w-full">
+
+        <section className="space-y-6 lg:col-span-2 w-full">
+
+          <WeatherCard data={weatherData.current} />
+          <HourlyChart
+            hourlyData={weatherData.hourly}
+            isDarkMode={isDarkMode}
+          />
+          <ForecastSection forecast={weatherData.daily} />
+        </section>
+
+        <aside className="space-y-6 w-full">
           
-          <section className="space-y-6 lg:col-span-2 w-full">
-   
-            <WeatherCard data={weatherData.current} />
-            <HourlyChart
-              hourlyData={weatherData.hourly}
-              isDarkMode={isDarkMode}
-            />
-            <ForecastSection forecast={weatherData.daily} />
-          </section>
+          <SmartAdvice
+            temp={weatherData.current.temperature}
+            aqi={weatherData.aqi}
+          />
 
-          <aside className="space-y-6 w-full">
-            
-            <SmartAdvice
-              temp={weatherData.current.temperature} 
-              aqi={weatherData.aqi} 
-            /> 
+          <WearSuggestion temperature={weatherData.current.temperature} />
+          <AirQualityCard aqi={weatherData.aqi} />
+          <WeatherHighlights data={weatherData.current} />
 
+        </aside>
 
-            <WearSuggestion temperature={weatherData.current.temperature} />
-            <AirQualityCard aqi={weatherData.aqi} />
-            <WeatherHighlights data={weatherData.current} />
-          </aside>
-        </div>
-      ) : null}
+      </div>
+    )}
+  </div>
+
+</div>
     </main>
   );
 }
