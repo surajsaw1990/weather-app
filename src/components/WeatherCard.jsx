@@ -57,7 +57,7 @@ function WeatherCard({ data }) {
           <img
             src={getWeatherIconUrl(data.icon)}
             alt={data.description}
-            className="h-20 w-20"
+            className="h-20 w-20 animate-float"
           />
           <div className="space-y-1 text-sm">
             <p>
