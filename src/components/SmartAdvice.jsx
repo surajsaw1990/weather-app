@@ -7,6 +7,15 @@ const hour = new Date().getHours();
 
 let adviceList = [];
 
+// 🕒 TIME FIRST (fix priority)
+if (hour >= 6 && hour < 12) {
+adviceList.push("🌤️ Fresh morning, great start");
+} else if (hour >= 12 && hour < 18) {
+adviceList.push("🚶 Comfortable time for outdoors");
+} else {
+adviceList.push("🌙 Calm night, best time to relax");
+}
+
 // 🌡️ Temperature logic
 if (temp >= 30) {
 adviceList.push("🥵 Hot weather outside");
@@ -26,17 +35,8 @@ adviceList.push("😷 Poor air quality");
 adviceList.push("🌫️ Slight pollution, be cautious");
 }
 
-// 🕒 Time logic
-if (hour < 12) {
-adviceList.push("🌤️ Fresh morning, great start");
-} else if (hour < 18) {
-adviceList.push("🚶 Comfortable time for outdoors");
-} else {
-adviceList.push("🌙 Calm night, best time to relax");
-}
-
-// 🎯 Limit max 4 lines (premium feel)
-adviceList = adviceList.slice(0, 4);
+// 🎯 LIMIT (max 3 lines = premium clean)
+adviceList = adviceList.slice(0, 3);
 
 return ( <div className="glass-panel rounded-[2rem] p-6 shadow-soft"> <p className="text-xs uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
 Smart Advice </p>
