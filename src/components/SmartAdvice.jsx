@@ -38,12 +38,14 @@ adviceList.push("🌫️ Slight pollution, be cautious");
 // 🎯 LIMIT (max 3 lines = premium clean)
 adviceList = adviceList.slice(0, 3);
 
-return ( <div className="glass-panel rounded-[2rem] p-6 shadow-soft"> <p className="text-xs uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
-Smart Advice </p>
+return ( <div className="glass-panel rounded-[2rem] p-6 shadow-soft transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"> 
+    <p className="text-xs uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
+        Smart Advice
+    </p>
 
   <div className="mt-2 space-y-1">
     {adviceList.map((item, index) => (
-      <p key={index} className="text-sm font-medium">
+      <p key={index} className="text-sm text-slate-700 dark:text-slate-300">
         {item}
       </p>
     ))}

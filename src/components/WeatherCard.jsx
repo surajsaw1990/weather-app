@@ -33,7 +33,7 @@ function WeatherCard({ data }) {
   return () => clearInterval(timer);
 }, [data?.temperature]);
   return (
-    <section className="glass-panel rounded-[2rem] p-6 shadow-soft animate-floatIn">
+    <section className="glass-panel rounded-[2rem] p-6 shadow-soft animate-floatIn transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
       <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-sky-700 dark:text-sky-300">
