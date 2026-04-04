@@ -8,6 +8,7 @@ import SearchBar from '../components/SearchBar';
 import SearchHistory from '../components/SearchHistory';
 import ThemeToggle from '../components/ThemeToggle';
 import WearSuggestion from '../components/WearSuggestion';
+import SmartAdvice from '../components/SmartAdvice';
 import WeatherCard from '../components/WeatherCard';
 import WeatherHighlights from '../components/WeatherHighlights';
 import {
@@ -140,6 +141,13 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
           </section>
 
           <aside className="space-y-6 w-full">
+            
+            <SmartAdvice
+              temp={weatherData.current.temperature} 
+              aqi={weatherData.aqi} 
+            /> 
+
+
             <WearSuggestion temperature={weatherData.current.temperature} />
             <AirQualityCard aqi={weatherData.aqi} />
             <WeatherHighlights data={weatherData.current} />

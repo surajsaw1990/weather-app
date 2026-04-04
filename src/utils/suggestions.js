@@ -1,63 +1,31 @@
-export const getWearSuggestion = (temperature, aqi = 0) => {
-// Hot weather
-if (temperature >= 30) {
-return {
-title: "Stay Cool & Hydrated 💧",
-description:
-"Avoid peak heat, use sunscreen 😎 and drink plenty of water."
-};
-}
+export const getWearSuggestion = (temperature) => {
+  if (temperature >= 30) {
+    return {
+      title: 'Keep it light',
+      description:
+        'Choose breathable cotton clothing, sunglasses, and stay hydrated because it is quite hot outside.'
+    };
+  }
 
-// Comfortable outdoor weather
-if (temperature >= 20 && temperature < 30 && aqi < 100) {
-return {
-title: "Perfect Day Outdoors 🌿",
-description:
-"Great time for workouts, walking or outdoor activities."
-};
-}
+  if (temperature >= 20) {
+    return {
+      title: 'Comfortable layers',
+      description:
+        'A t-shirt or light shirt with jeans works well. Carry a thin layer for the evening just in case.'
+    };
+  }
 
-// Mild weather
-if (temperature >= 15 && temperature < 20) {
-return {
-title: "Light Layers Recommended 👕",
-description:
-"A light jacket or full-sleeve shirt will keep you comfortable."
-};
-}
+  if (temperature >= 10) {
+    return {
+      title: 'Bring a jacket',
+      description:
+        'Wear a sweater or light jacket to stay comfortable, especially if the wind picks up later in the day.'
+    };
+  }
 
-// Cold weather
-if (temperature >= 10 && temperature < 15) {
-return {
-title: "Bring a Jacket 🧥",
-description:
-"Wear a sweater or jacket to stay warm, especially in the evening."
+  return {
+    title: 'Bundle up',
+    description:
+      'Go for warm layers, a heavier coat, and closed shoes. Add a scarf if you expect wind or rain.'
+  };
 };
-}
-
-// Very cold
-if (temperature < 10) {
-return {
-title: "Bundle Up ❄️",
-description:
-"Wear warm layers, a coat, and cover yourself properly."
-};
-}
-
-// Bad AQI
-if (aqi > 120) {
-return {
-title: "Air Quality Alert 😷",
-description:
-"Avoid long outdoor exposure and consider wearing a mask."
-};
-}
-
-// Default
-return {
-title: "Comfortable Weather 🙂",
-description:
-"You’re good to go! Light and comfortable clothing is fine."
-};
-};
-
