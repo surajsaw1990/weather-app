@@ -163,6 +163,10 @@ function HomePage({ isDarkMode, onThemeToggle, onWeatherConditionChange }) {
           <SmartAdvice
             temp={weatherData.current.temperature}
             aqi={weatherData.aqi}
+            condition={
+              weatherData.current.weatherMain ||
+              weatherData.current.weather?.[0]?.main
+            }
           />
 
           <WearSuggestion temperature={weatherData.current.temperature} />
